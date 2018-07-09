@@ -22,5 +22,6 @@ var DEFAULT_CLASSNAMES = exports.DEFAULT_CLASSNAMES = {
   tag: 'ReactTags__tag',
   remove: 'ReactTags__remove',
   suggestions: 'ReactTags__suggestions',
-  activeSuggestion: 'ReactTags__activeSuggestion'
+  activeSuggestion: 'ReactTags__activeSuggestion',
+  activeSuggestionAnchor: 'ReactTags__activeSuggestionAnchor'
 };

@@ -112,7 +112,15 @@ var Suggestions = function (_Component) {
             onMouseDown: props.handleClick.bind(null, i),
             onMouseOver: props.handleHover.bind(null, i),
             className: i === props.selectedIndex ? props.classNames.activeSuggestion : '' },
-          _react2.default.createElement('span', { dangerouslySetInnerHTML: this.markIt(item, props.query) })
+          _react2.default.createElement(
+            'a',
+            {
+              href: '#',
+              className: props.classNames.activeSuggestionAnchor,
+              onClick: props.handleClick.bind(null, i)
+            },
+            _react2.default.createElement('span', { dangerouslySetInnerHTML: this.markIt(item, props.query) })
+          )
         );
       }.bind(this));
 
