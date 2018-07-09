@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
-import { spy } from 'sinon';
+import sinon, { spy } from 'sinon';
 import Suggestions from '../lib/Suggestions';
 import noop from 'lodash/noop';
 
@@ -190,5 +190,15 @@ describe('Suggestions', function() {
     );
 
     expect($el.componentDidUpdate.called).to.equal(true);
+  });
+
+  test("should call handleClick when touched", function() {
+    const s = spy();
+    const $el = mount(mockItem({ handleClick: s }));
+    $el
+      .find("li")
+      .at(0)
+      .simulate("touchStart");
+    expect(s.calledOnce).to.be.true;
   });
 });
